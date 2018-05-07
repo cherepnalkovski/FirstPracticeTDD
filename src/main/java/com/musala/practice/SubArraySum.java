@@ -19,21 +19,21 @@ public class SubArraySum {
         int maxSum = 0;
         int currentSum = 0;
         int subListSize;
-        for (int i = 0; i < numbers.size(); ) {
+        for (int i = 0; i < numbers.size(); i++) {
             subListSize = numbers.get(i);
             if (subListSize < 0) {
-                i++;
                 continue;
             }
             int j = i + subListSize;
-            for (; i <= j; i++) {
-                if (i >= numbers.size()) {
+            for (int p = i; p <= j; p++) {
+                if (p >= numbers.size()) {
                     break;
                 }
-                currentSum += numbers.get(i);
+                currentSum += numbers.get(p);
             }
             maxSum = currentSum > maxSum ? currentSum : maxSum;
             currentSum = 0;
+            i = j;
         }
         return maxSum;
     }
