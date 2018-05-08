@@ -3,7 +3,7 @@ package com.musala.practice;
 import java.util.List;
 
 /**
- * Find the contiguous subarray within an array which has the largest sum
+ * Find the contiguous subarray within an array which has the largest sum.
  */
 public class SubArraySum {
 

@@ -8,6 +8,9 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * Unit test for class that find largest sum of subarray elements.
+ */
 public class SubArraySumTest {
 
     @Test

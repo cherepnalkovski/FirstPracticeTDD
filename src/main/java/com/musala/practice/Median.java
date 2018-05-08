@@ -2,10 +2,14 @@ package com.musala.practice;
 
 import java.util.List;
 
+/**
+ * Class used to find index of the median element of an array.
+ * A median is such an element that the difference of the sums of the elements in the left and the right are equal.
+ */
 public class Median {
     /**
      * @param numbers arraylist with elements
-     * @return index of median in array if array size is odd number, else returns -1.
+     * @return index of median or index of number closest to median if median number does not exists.
      */
     public int findMedianIndex(List<Integer> numbers) {
         int sumLeft = 0;

@@ -9,8 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Unit test for class that finds median number index in unsorted array.
- * Returns position index of median number in array or -1 if there are even number of elements in array.
+ * Unit test for class that finds median number index in array.
  */
 public class MedianTest {
 
