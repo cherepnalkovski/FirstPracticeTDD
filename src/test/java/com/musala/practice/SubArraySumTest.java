@@ -13,10 +13,19 @@ public class SubArraySumTest {
     @Test
     public void test_subArrayMaxSum() {
         ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(-2, 1, 0, 4, 1, -4, 1, 5, -3, 6, 1, 2, 5, -1, 10));
-        SubArraySum subArraySum = new SubArraySum(numbers);
+        SubArraySum subArraySum = new SubArraySum();
         int maxSum = subArraySum.calculateSubArraySum(numbers);
         assertNotNull(subArraySum);
-        assertEquals(23, maxSum);
+        assertEquals(14, maxSum);
+    }
+
+    @Test
+    public void test_EmptysubArrayMaxSum() {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        SubArraySum subArraySum = new SubArraySum();
+        int maxSum = subArraySum.calculateSubArraySum(numbers);
+        assertNotNull(subArraySum);
+        assertEquals(0, maxSum);
     }
 
 }

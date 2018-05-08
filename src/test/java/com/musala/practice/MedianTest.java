@@ -15,22 +15,22 @@ import static org.junit.Assert.assertNotNull;
 public class MedianTest {
 
     @Test
-    public void test_findMedianNumberOdd() {
-        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(11, 41, 7, 9, 2, 15, 23, 1, 99));
-        Median median = new Median(numbers);
+    public void test_findClosestMedianNumber() {
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 3, 2, 5, 2, 7));
+        Median median = new Median();
         int index;
         index = median.findMedianIndex(numbers);
         assertNotNull(median);
-        assertEquals(0, index);
+        assertEquals(3, index);
     }
 
     @Test
-    public void test_findMedianNumberEven() {
-        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(11, 41, 7, 9, 2, 15, 23, 1, 99, 100));
-        Median median = new Median(numbers);
+    public void test_findMedianNumber() {
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(11, -10, 0, 1));
+        Median median = new Median();
         int index;
         index = median.findMedianIndex(numbers);
         assertNotNull(median);
-        assertEquals(-1, index);
+        assertEquals(2, index);
     }
 }

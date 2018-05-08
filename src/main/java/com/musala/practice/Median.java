@@ -1,27 +1,38 @@
 package com.musala.practice;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class Median {
-    public Median(List<Integer> numbers) {
-    }
-
     /**
      * @param numbers arraylist with elements
      * @return index of median in array if array size is odd number, else returns -1.
      */
     public int findMedianIndex(List<Integer> numbers) {
-        ArrayList<Integer> sortedList = new ArrayList<>(numbers);
-        sortedList.sort(Comparator.naturalOrder());
-        if (sortedList.size() % 2 == 0) {
-            return -1;
+        int sumLeft = 0;
+        int sumRight = 0;
+        int median = 1;
+        int difference = Integer.MAX_VALUE;
+        int sum;
+        int closestToMedian = 0;
+        for (int k = 0; k < numbers.size(); k++) {
+            for (int i = 0; i < median; i++) {
+                sumLeft += numbers.get(i);
+            }
+            for (int i = median + 1; i < numbers.size(); i++) {
+                sumRight += numbers.get(i);
+            }
+            if (sumLeft == sumRight) {
+                return median;
+            } else {
+                sum = Math.abs(sumLeft - sumRight);
+                if (difference > sum) {
+                    difference = sum;
+                    closestToMedian = median;
+                }
+                median++;
+                sumLeft = sumRight = 0;
+            }
         }
-        int median;
-        int middle;
-        middle = (sortedList.size() - 1) / 2;
-        median = sortedList.get(middle);
-        return numbers.indexOf(median);
+        return closestToMedian;
     }
 }

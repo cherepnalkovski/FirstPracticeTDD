@@ -6,8 +6,6 @@ import java.util.List;
  * Find the contiguous subarray within an array which has the largest sum
  */
 public class SubArraySum {
-    public SubArraySum(List<Integer> numbers) {
-    }
 
     /**
      * Find the contiguos subarray within an array which has the largest sum of elements.
@@ -16,24 +14,18 @@ public class SubArraySum {
      * @return largest sum of subarray elements
      */
     public int calculateSubArraySum(List<Integer> numbers) {
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         int currentSum = 0;
-        int subListSize;
-        for (int i = 0; i < numbers.size(); i++) {
-            subListSize = numbers.get(i);
-            if (subListSize < 0) {
-                continue;
+        if (numbers.isEmpty()) {
+            return 0;
+        }
+        for (int number : numbers) {
+            currentSum += number;
+            if (currentSum >= maxSum) {
+                maxSum = currentSum;
+            } else {
+                currentSum = 0;
             }
-            int j = i + subListSize;
-            for (int p = i; p <= j; p++) {
-                if (p >= numbers.size()) {
-                    break;
-                }
-                currentSum += numbers.get(p);
-            }
-            maxSum = currentSum > maxSum ? currentSum : maxSum;
-            currentSum = 0;
-            i = j;
         }
         return maxSum;
     }
