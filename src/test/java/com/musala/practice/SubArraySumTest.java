@@ -10,6 +10,8 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * Unit test for class that find largest sum of subarray elements.
+ *
+ * @author <a href="mailto:cherepnalkovski@hotmail.com> Vladimir Cherepnalkovski</a>
  */
 public class SubArraySumTest {
 

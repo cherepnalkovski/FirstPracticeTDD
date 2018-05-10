@@ -9,7 +9,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Unit test for class that finds median number index in array.
+ * Unit test for class {@link Median} that finds median number index in array.
+ *
+ * @author <a href="mailto:cherepnalkovski@hotmail.com> Vladimir Cherepnalkovski</a>
  */
 public class MedianTest {
 
