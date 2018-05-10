@@ -27,14 +27,14 @@ class Printer {
     private static void printPicture(int misses) {
         switch (misses) {
             case 0:
-                /*System.out.println("_________");
+                System.out.println("_________");
                 System.out.println("|       |");
                 System.out.println("|");
                 System.out.println("|");
                 System.out.println("|");
                 System.out.println("|");
                 System.out.println("|");
-                System.out.println("|__________");*/
+                System.out.println("|__________");
                 break;
             case 1:
                 System.out.println("_________");
