@@ -34,14 +34,19 @@ public class MergeSort {
         int i = low;
         int j = mid;
         for (int k = 0; k < size; k++) {
-            if (i == mid)
+            if (i == mid) {
                 temp[k] = numbers.get(j++);
-            else if (j == high)
-                temp[k] = numbers.get(i++);
-            else if (numbers.get(j) < numbers.get(i))
-                temp[k] = numbers.get(j++);
-            else
-                temp[k] = numbers.get(i++);
+            } else {
+                if (j == high) {
+                    temp[k] = numbers.get(i++);
+                } else {
+                    if (numbers.get(j) < numbers.get(i)) {
+                        temp[k] = numbers.get(j++);
+                    } else {
+                        temp[k] = numbers.get(i++);
+                    }
+                }
+            }
         }
         for (int k = 0; k < size; k++) {
             numbers.set(low + k, temp[k]);
